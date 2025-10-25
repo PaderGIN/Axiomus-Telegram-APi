@@ -1,0 +1,8 @@
+package ru.glebpad.axiomustelegramapi.service;
+
+import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+
+public interface TelegramExecutor {
+    void execute(SendMessage message) throws TelegramApiException;
+}

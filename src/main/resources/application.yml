@@ -1,0 +1,44 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://79.137.192.189:5432/axiomus_dev
+    username: padergin
+    password: padergin
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+
+  rabbitmq:
+    host: 79.137.192.189
+    port: 5672
+    username: axiomus
+    password: axiomus
+    virtual-host: /
+    listener:
+      simple:
+        auto-startup: true
+
+app:
+  external-api:
+    base-url: "https://your.api.example.com"
+    path: "/process"
+    timeout-seconds: 25
+    retry:
+      max-attempts: 3
+      backoff-millis: 500
+
+telegram:
+  bot:
+    username: "@axiomus_bot"
+#    token: "${TELEGRAM_BOT_TOKEN}"
+    token: "8473410682:AAFyLvNL3SOWQKt31OtpizpYlsfkswTwMTc"
+    allowed-users: []
+logging:
+  level:
+    root: INFO
+    com.example: DEBUG
