@@ -4,7 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 docker-compose.yml
-my.env
+.env
 ### STS ###
 .apt_generated
 .classpath
